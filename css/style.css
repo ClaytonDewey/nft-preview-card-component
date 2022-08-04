@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/*  GROUPING  */
+html,
+body {
+  margin: 0px auto;
+  width: 100%;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  font-style: normal;
+  font-weight: normal; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #0d192b;
+  color: #8bacda;
+  font-family: 'Outfit', serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  position: relative; }
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 32.7rem;
+  height: 54rem;
+  border-radius: 1.5rem;
+  background: #14253d;
+  padding: 2.5rem; }
+  .card__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem; }
+    .card__img-hover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #00fff7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.5rem;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+      cursor: pointer; }
+    .card__img-container {
+      position: relative; }
+      .card__img-container:hover .card__img-hover {
+        opacity: .5; }
+  .card h1 a {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none; }
+    .card h1 a:hover {
+      color: #00fff7; }
+  .card p {
+    color: #8bacda;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 1.5rem; }
+  .card__body::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #2f415b;
+    margin: 1.5rem auto; }
+  .card__meta {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.8rem; }
+    .card__meta div {
+      flex: 0 0 50%;
+      justify-content: space-between; }
+      .card__meta div:first-child {
+        color: #00fff7; }
+      .card__meta div:last-child {
+        text-align: right; }
+  .card__footer {
+    font-size: 1.2rem; }
+    .card__footer img {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 100%;
+      border: 1px solid white;
+      display: inline;
+      vertical-align: middle;
+      margin-right: 1.5rem; }
+    .card__footer a:link {
+      color: white;
+      text-decoration: none; }
+
+.attribution {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: #3e52a3; }

@@ -1,0 +1,200 @@
+// Breakpoints
+$bp-small: 23.4375em; // 375x;
+$bp-large: 90em; // 1440px;
+
+// Media Queries
+$mq-small: 'screen and (min-width: #{$bp-small})';
+$mq-large: 'screen and (min-width: #{$bp-large})';
+
+// colors
+$clr-primary-blue: hsl(215, 51%, 70%);
+$clr-primary-cyan: hsl(178, 100%, 50%);
+$clr-white: hsl(0, 0%, 100%);
+$clr-bg-main: hsl(217, 54%, 11%);
+$clr-bg-card: hsl(216, 50%, 16%);
+$clr-line: hsl(215, 32%, 27%);
+
+// font weights
+$fw-bold: 600;
+$fw-regular: 400;
+$fw-light: 300;
+
+// font-sizes
+$fs-400: 2.5rem;
+$fs-300: 2rem;
+$fs-200: 1.8rem;
+$fs-100: 1.2rem;
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/*  GROUPING  */
+html,
+body {
+    margin: 0px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+html {
+  // This defines what 1rem is.
+  font-size: 62.5%; // 1rem = 10px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: $clr-bg-main;
+  color: $clr-primary-blue;
+  font-family: 'Outfit', serif;
+  font-weight: 400;
+  font-size: $fs-200;
+  position: relative;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 32.7rem;
+  height: 54rem;
+  border-radius: 1.5rem;
+  background: $clr-bg-card;
+  padding: 2.5rem;
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    &-hover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $clr-primary-cyan;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.5rem;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+      cursor: pointer;
+    }
+
+    &-container {
+      position: relative;
+
+      &:hover .card__img-hover {
+        opacity: .5;
+      }
+    }
+ }
+
+  h1 {
+    a {
+      font-size: 2rem;
+      font-weight: $fw-bold;
+      color: $clr-white;
+      text-decoration: none;
+
+      &:hover {
+        color: $clr-primary-cyan;
+      }
+    }
+  }
+
+  p {
+    color: $clr-primary-blue;
+    font-size: $fs-200;
+    line-height: 1.5;
+    font-weight: $fw-light;
+    margin-bottom: 1.5rem;
+  }
+
+  &__body {
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: $clr-line;
+      margin: 1.5rem auto;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: $fs-200;
+
+    div {
+      flex: 0 0 50%;
+      justify-content: space-between;
+
+      &:first-child {
+        color: $clr-primary-cyan;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &__footer {
+    font-size: $fs-100;
+
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 100%;
+      border: 1px solid $clr-white;
+      display: inline;
+      vertical-align: middle;
+      margin-right: 1.5rem;
+    }
+
+    a:link {
+      color: $clr-white;
+      text-decoration: none;
+    }
+}
+}
+
+// Attribution
+.attribution {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
