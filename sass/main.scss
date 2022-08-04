@@ -34,7 +34,6 @@ $fs-100: 1.2rem;
     box-sizing: inherit;
 }
 
-/*  GROUPING  */
 html,
 body {
     margin: 0px auto;
@@ -86,8 +85,8 @@ body {
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 1.5rem;
-    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.8rem;
 
     &-hover {
       position: absolute;
@@ -115,11 +114,13 @@ body {
  }
 
   h1 {
+    margin-bottom: 1.5rem;
     a {
       font-size: 2rem;
       font-weight: $fw-bold;
       color: $clr-white;
       text-decoration: none;
+      letter-spacing: 1px;
 
       &:hover {
         color: $clr-primary-cyan;
@@ -129,10 +130,11 @@ body {
 
   p {
     color: $clr-primary-blue;
-    font-size: $fs-200;
-    line-height: 1.5;
+    font-size: 1.5rem;
+    line-height: 1.6;
     font-weight: $fw-light;
     margin-bottom: 1.5rem;
+    letter-spacing: 1px;
   }
 
   &__body {
@@ -154,6 +156,10 @@ body {
     div {
       flex: 0 0 50%;
       justify-content: space-between;
+
+      > img {
+        vertical-align: middle;
+      }
 
       &:first-child {
         color: $clr-primary-cyan;
@@ -182,7 +188,35 @@ body {
       color: $clr-white;
       text-decoration: none;
     }
-}
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: $clr-white;
+    }
+  }
+
+  @media #{$mq-large} {
+    width: 35rem;
+    height: 59.6rem;
+
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    &__body::after {
+      margin: 2rem auto;
+    }
+
+    &__footer {
+      font-size: $fs-200;
+    }
+  }
 }
 
 // Attribution
@@ -196,5 +230,5 @@ body {
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: $clr-white;
 }
